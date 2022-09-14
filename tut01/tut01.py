@@ -63,4 +63,28 @@ with open("octant_input.csv","r") as ft:         # we have again opened the octa
 
 i = 0      # i is the index
 count_positive_1 = count_positive_2 = count_positive_3 = count_positive_4 = 0    # initialization of octant value that tells howmany times the octant present 
-count_negative_1 = count_negative_2 = count_negative_3 = count_negative_4 = 0           
+count_negative_1 = count_negative_2 = count_negative_3 = count_negative_4 = 0
+
+while(i<len(list_1)):
+    if(list_1[i]>0 and list_2[i]>0):           # these are the codes to calculate the each octant
+        if(list_3[i]>0):                       # this is for whether the octant is -1 or 1
+            count_positive_1+=1
+        else:
+            count_negative_1+=1
+    elif(list_1[i]<0 and list_2[i]>0):          # this is for whether the octant is -2 or 2
+        if(list_3[i]>0):
+            count_positive_2+=1
+        else:
+            count_negative_2+=1
+    elif(list_1[i]<0 and list_2[i]<0):         # this is for whether the octant is -3 or 3
+        if(list_3[i]>0):
+            count_positive_3+=1
+        else:
+            count_negative_3+=1
+    elif(list_1[i]>0 and list_2[i]<0):        # this is for whether the octant is -4 or 4
+        if(list_3[i]>0):
+            count_positive_4+=1
+        else:
+            count_negative_4+=1
+
+    i+=1
