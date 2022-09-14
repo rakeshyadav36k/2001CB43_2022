@@ -88,3 +88,13 @@ while(i<len(list_1)):
             count_negative_4+=1
 
     i+=1
+
+print("number of octants : ")          # we printed the no of octants
+print("total no of '1' octant : ",count_positive_1)
+print("total no of '-1' octant : ",count_negative_1)
+print("total no of '2' octant : ",count_positive_2)
+print("total no of '-2' octant : ",count_negative_2)
+print("total no of '3' octant : ",count_positive_3)
+print("total no of '-3' octant : ",count_negative_3)
+print("total no of '4' octant : ",count_positive_4)
+print("total no of '-4' octant : ",count_negative_4)
