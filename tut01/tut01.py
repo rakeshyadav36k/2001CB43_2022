@@ -98,3 +98,55 @@ print("total no of '3' octant : ",count_positive_3)
 print("total no of '-3' octant : ",count_negative_3)
 print("total no of '4' octant : ",count_positive_4)
 print("total no of '-4' octant : ",count_negative_4)
+
+###  now we writing the codes howmany times octants are present in a particular range
+
+def octant_finding(mod):
+    j=k=0
+    num = mod
+    
+    while(j<len(list_1)/num):
+        mod_ct_pos1=mod_ct_pos2=mod_ct_pos3=mod_ct_pos4=mod_ct_neg1=mod_ct_neg2=mod_ct_neg3=mod_ct_neg4 = 0
+    
+        while(k<mod):
+            if(list_1[k]>0 and list_2[k]>0):           # this is for whether the octant is -1 or 1
+                if(list_3[k]>0):
+                    mod_ct_pos1+=1
+                else:
+                    mod_ct_neg1+=1
+
+            elif(list_1[k]<0 and list_2[k]>0):         # this is for whether the octant is -2 or 2
+                if(list_3[k]>0):
+                    mod_ct_pos2+=1
+                else:
+                    mod_ct_neg2+=1
+
+            elif(list_1[k]<0 and list_2[k]<0):           # this is for whether the octant is -3 or 3
+                if(list_3[k]>0):
+                    mod_ct_pos3+=1
+                else:
+                    mod_ct_neg3+=1
+
+            elif(list_1[k]>0 and list_2[k]<0):           # this is for whether the octant is -4 or 4
+                if(list_3[k]>0):
+                    mod_ct_pos4+=1
+                else:
+                    mod_ct_neg4+=1
+
+            k+=1
+        mod+=num
+        j+=1
+        
+        print("the count value for given mod :  ")
+        print(mod_ct_pos1)       
+        print(mod_ct_pos2)       
+        print(mod_ct_pos3)       
+        print(mod_ct_pos4) 
+        print(mod_ct_neg1)      
+        print(mod_ct_neg2)      
+        print(mod_ct_neg3)      
+        print(mod_ct_neg4)   
+
+mod = int(input("enter the value of mod : "))   
+octant_finding(mod)
+            
