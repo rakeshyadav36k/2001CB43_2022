@@ -34,3 +34,24 @@ with open("octant_input.csv","r") as ft:  # first we read the octant_input.csv f
             W_total+=float(line[3])
         count+=1
 
+U_avg = U_total/count            # here we have calculated the average of U, V & W
+V_avg = V_total/count
+W_avg = W_total/count
+
+length1 = length2 = length3 = 0               
+list_1 = []                          # we declare three empty list in which we can store the value of U', V' & W'
+list_2 = []
+list_3 = []
+
+with open("octant_input.csv","r") as ft:         # we have again opened the octant_input.csv file in read mode
+    info = csv.reader(ft)
+    for x in info:
+        if(x[1]!='U'):
+            list_1.insert(length1,float(x[1])-U_avg)     # here we have inserted the value of U'= U - U_avg, V'= V - V_avg & W'= W - W_avg in the list
+            length1+=1
+        if(x[2]!='V'):
+            list_2.insert(length2,float(x[2])-V_avg)
+            length2+=1
+        if(x[3]!='W'):
+            list_3.insert(length3,float(x[3])-W_avg)
+            length3+=1
