@@ -55,3 +55,12 @@ with open("octant_input.csv","r") as ft:         # we have again opened the octa
         if(x[3]!='W'):
             list_3.insert(length3,float(x[3])-W_avg)
             length3+=1
+
+# print(list_1)
+# print(list_2)
+# print(list_3)
+
+
+i = 0      # i is the index
+count_positive_1 = count_positive_2 = count_positive_3 = count_positive_4 = 0    # initialization of octant value that tells howmany times the octant present 
+count_negative_1 = count_negative_2 = count_negative_3 = count_negative_4 = 0           
