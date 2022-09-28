@@ -99,3 +99,55 @@ for i in range(0,len(l1)):
             sheet.cell(row=i+2, column=11).value = "+4"
         else:                                                 # this tells whether the octant is +4 or -4
             sheet.cell(row=i+2, column=11).value = "-4"
+
+l7 = df['Octant']  # this list l7 contains the all octants values
+
+sheet['M2']="Overall Count"  # this is basicallly printed the header
+sheet['N1'] = "+1"
+sheet['O1'] = "-1"
+sheet['P1'] = "+2"
+sheet['Q1'] = "-2"
+sheet['R1'] = "+3"
+sheet['S1'] = "-3"
+sheet['T1'] = "+4"
+sheet['U1'] = "-4"
+
+ctpos1 = ctneg1 = ctpos2 = ctneg2 = ctpos3 = ctneg3 = ctpos4 = ctneg4 = 0  # these variables are total no each octant present
+
+for i in range(0,len(l1)):
+    if(l4[i]>0 and l5[i]>0):
+        if(l6[i]>0):
+            ctpos1 += 1               # total count of octant no +1 & -1
+        else:
+            ctneg1 += 1
+    elif(l4[i]<0 and l5[i]>0):
+        if(l6[i]>0):
+            ctpos2 += 1                 # total count of octant no +2 & -2
+        else:
+            ctneg2 += 1
+    elif(l4[i]<0 and l5[i]<0):
+        if(l6[i]>0):
+            ctpos3 += 1                 # total count of octant no +3 & -3
+        else:
+            ctneg3 += 1
+    elif(l4[i]>0 and l5[i]<0):
+        if(l6[i]>0):
+            ctpos4 += 1                 # total count of octant no +4 & -4
+        else:
+            ctneg4 += 1
+
+
+#  we have inserted the values of total no of each count
+
+sheet.cell(row=2, column=14).value = ctpos1
+sheet.cell(row=2, column=15).value = ctneg1
+sheet.cell(row=2, column=16).value = ctpos2
+sheet.cell(row=2, column=17).value = ctneg2
+sheet.cell(row=2, column=18).value = ctpos3
+sheet.cell(row=2, column=19).value = ctneg3
+sheet.cell(row=2, column=20).value = ctpos4
+sheet.cell(row=2, column=21).value = ctneg4
+
+
+
+wb.save('input_octant_transition_identify.xlsx')
