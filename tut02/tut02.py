@@ -43,3 +43,59 @@ sheet.cell(row=2, column=7).value = Wavg
 l1 = df['U']            # creating the list l1,l2,l3 which consist the element of U,V,W respectively
 l2 = df['V']
 l3 = df['W']
+
+
+# creating three lists l4,l5 & l6 which contains the values of U', V' & W'
+
+#********************   
+l4=[]
+for i in l1:
+    a = i - Uavg
+    l4.append(a)
+
+for i in range(2,len(l1)+2):
+    sheet.cell(row=i, column=8).value = l4[i-2]
+
+l5=[]
+for i in l2:
+    a = i - Vavg
+    l5.append(a)
+
+for i in range(2,len(l2)+2):
+    sheet.cell(row=i, column=9).value = l5[i-2]
+
+l6=[]
+for i in l3:
+    a = i - Wavg
+    l6.append(a)
+
+for i in range(2,len(l3)+2):
+    sheet.cell(row=i, column=10).value = l6[i-2]
+
+#************************************
+
+# here we have created a header "Octant" and print the values of octants in excel file
+
+sheet.cell(row=1, column=11).value = "Octant"
+
+for i in range(0,len(l1)):
+    if(l4[i]>0 and l5[i]>0):
+        if(l6[i]>0):
+            sheet.cell(row=i+2, column=11).value = "+1"
+        else:                                               # this tells whether the octant is +1 or -1
+            sheet.cell(row=i+2, column=11).value = "-1"
+    elif(l4[i]<0 and l5[i]>0):
+        if(l6[i]>0):
+            sheet.cell(row=i+2, column=11).value = "+2"
+        else:                                               # this tells whether the octant is +2 or -2
+            sheet.cell(row=i+2, column=11).value = "-2"
+    elif(l4[i]<0 and l5[i]<0):
+        if(l6[i]>0):
+            sheet.cell(row=i+2, column=11).value = "+3"
+        else:                                                # this tells whether the octant is +3 or -3
+            sheet.cell(row=i+2, column=11).value = "-3"
+    elif(l4[i]>0 and l5[i]<0):
+        if(l6[i]>0):
+            sheet.cell(row=i+2, column=11).value = "+4"
+        else:                                                 # this tells whether the octant is +4 or -4
+            sheet.cell(row=i+2, column=11).value = "-4"
