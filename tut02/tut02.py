@@ -188,3 +188,201 @@ for i in range(p):
         sheet.cell(row=i+4, column=13).value = str(mod*i)+"-"+str(len(l7)-1)
     for j in range(8):
         sheet.cell(row=i+4, column=14+j).value = A[i].count(new_octant[j])      #we have counted the octant values in a range mod value
+
+################################
+sheet.cell(row=8+p, column=13).value = "Overall Transition Count"    # it is simply written the headers
+sheet.cell(row=10+p, column=13).value = "Count"
+sheet.cell(row=11+p, column=13).value = "+1"
+sheet.cell(row=12+p, column=13).value = "-1"
+sheet.cell(row=13+p, column=13).value = "+2"
+sheet.cell(row=14+p, column=13).value = "-2"
+sheet.cell(row=15+p, column=13).value = "+3"  
+sheet.cell(row=16+p, column=13).value = "-3"
+sheet.cell(row=17+p, column=13).value = "+4"
+sheet.cell(row=18+p, column=13).value = "-4"
+sheet.cell(row=10+p, column=14).value = "+1"
+sheet.cell(row=10+p, column=15).value = "-1"
+sheet.cell(row=10+p, column=16).value = "+2"
+sheet.cell(row=10+p, column=17).value = "-2"
+sheet.cell(row=10+p, column=18).value = "+3"
+sheet.cell(row=10+p, column=19).value = "-3"
+sheet.cell(row=10+p, column=20).value = "+4"
+sheet.cell(row=10+p, column=21).value = "-4"
+sheet.cell(row=11+p, column=12).value = "From"
+sheet.cell(row=9+p, column=14).value = "To"
+
+# now are defining the transition from one octants to another octant using 64 variables 
+
+r1c1 = r1c2 = r1c3 = r1c4 = r1c5 = r1c6 = r1c7 = r1c8 = 0
+r2c1 = r2c2 = r2c3 = r2c4 = r2c5 = r2c6 = r2c7 = r2c8 = 0
+r3c1 = r3c2 = r3c3 = r3c4 = r3c5 = r3c6 = r3c7 = r3c8 = 0
+r4c1 = r4c2 = r4c3 = r4c4 = r4c5 = r4c6 = r4c7 = r4c8 = 0
+r5c1 = r5c2 = r5c3 = r5c4 = r5c5 = r5c6 = r5c7 = r5c8 = 0
+r6c1 = r6c2 = r6c3 = r6c4 = r6c5 = r6c6 = r6c7 = r6c8 = 0
+r7c1 = r7c2 = r7c3 = r7c4 = r7c5 = r7c6 = r7c7 = r7c8 = 0
+r8c1 = r8c2 = r8c3 = r8c4 = r8c5 = r8c6 = r8c7 = r8c8 = 0 
+
+for i in range(len(l7)-1):      # these codes are to count the each transition values
+    if(l7[i]==1):
+        if(l7[i+1]==1):
+            r1c1+=1
+        elif(l7[i+1]==-1):
+            r1c2+=1
+        elif(l7[i+1]==2):
+            r1c3+=1
+        elif(l7[i+1]==-2):
+            r1c4+=1
+        elif(l7[i+1]==3):
+            r1c5+=1
+        elif(l7[i+1]==-3):
+            r1c6+=1
+        elif(l7[i+1]==4):
+            r1c7+=1
+        elif(l7[i+1]==-4):
+            r1c8+=1
+
+    if(l7[i]==-1):
+        if(l7[i+1]==1):
+            r2c1+=1
+        elif(l7[i+1]==-1):
+            r2c2+=1
+        elif(l7[i+1]==2):
+            r2c3+=1
+        elif(l7[i+1]==-2):
+            r2c4+=1
+        elif(l7[i+1]==3):
+            r2c5+=1
+        elif(l7[i+1]==-3):
+            r2c6+=1
+        elif(l7[i+1]==4):
+            r2c7+=1
+        elif(l7[i+1]==-4):
+            r2c8+=1
+
+    if(l7[i]==2):
+        if(l7[i+1]==1):
+            r3c1+=1
+        elif(l7[i+1]==-1):
+            r3c2+=1
+        elif(l7[i+1]==2):
+            r3c3+=1
+        elif(l7[i+1]==-2):
+            r3c4+=1
+        elif(l7[i+1]==3):
+            r3c5+=1
+        elif(l7[i+1]==-3):
+            r3c6+=1
+        elif(l7[i+1]==4):
+            r3c7+=1
+        elif(l7[i+1]==-4):
+            r3c8+=1
+
+    if(l7[i]==-2):
+        if(l7[i+1]==1):
+            r4c1+=1
+        elif(l7[i+1]==-1):
+            r4c2+=1
+        elif(l7[i+1]==2):
+            r4c3+=1
+        elif(l7[i+1]==-2):
+            r4c4+=1
+        elif(l7[i+1]==3):
+            r4c5+=1
+        elif(l7[i+1]==-3):
+            r4c6+=1
+        elif(l7[i+1]==4):
+            r4c7+=1
+        elif(l7[i+1]==-4):
+            r4c8+=1
+
+    if(l7[i]==3):
+        if(l7[i+1]==1):
+            r5c1+=1
+        elif(l7[i+1]==-1):
+            r5c2+=1
+        elif(l7[i+1]==2):
+            r5c3+=1
+        elif(l7[i+1]==-2):
+            r5c4+=1
+        elif(l7[i+1]==3):
+            r5c5+=1
+        elif(l7[i+1]==-3):
+            r5c6+=1
+        elif(l7[i+1]==4):
+            r5c7+=1
+        elif(l7[i+1]==-4):
+            r5c8+=1
+
+    if(l7[i]==-3):
+        if(l7[i+1]==1):
+            r6c1+=1
+        elif(l7[i+1]==-1):
+            r6c2+=1
+        elif(l7[i+1]==2):
+            r6c3+=1
+        elif(l7[i+1]==-2):
+            r6c4+=1
+        elif(l7[i+1]==3):
+            r6c5+=1
+        elif(l7[i+1]==-3):
+            r6c6+=1
+        elif(l7[i+1]==4):
+            r6c7+=1
+        elif(l7[i+1]==-4):
+            r6c8+=1
+
+    if(l7[i]==4):
+        if(l7[i+1]==1):
+            r7c1+=1
+        elif(l7[i+1]==-1):
+            r7c2+=1
+        elif(l7[i+1]==2):
+            r7c3+=1
+        elif(l7[i+1]==-2):
+            r7c4+=1
+        elif(l7[i+1]==3):
+            r7c5+=1
+        elif(l7[i+1]==-3):
+            r7c6+=1
+        elif(l7[i+1]==4):
+            r7c7+=1
+        elif(l7[i+1]==-4):
+            r7c8+=1
+
+    if(l7[i]==-4):
+        if(l7[i+1]==1):
+            r8c1+=1
+        elif(l7[i+1]==-1):
+            r8c2+=1
+        elif(l7[i+1]==2):
+            r8c3+=1
+        elif(l7[i+1]==-2):
+            r8c4+=1
+        elif(l7[i+1]==3):
+            r8c5+=1
+        elif(l7[i+1]==-3):
+            r8c6+=1
+        elif(l7[i+1]==4):
+            r8c7+=1
+        elif(l7[i+1]==-4):
+            r8c8+=1
+
+    # here transition values are put in the list by which it will easily print
+l8 = [r1c1,r1c2,r1c3,r1c4,r1c5,r1c6,r1c7,r1c8]
+l9 = [r2c1,r2c2,r2c3,r2c4,r2c5,r2c6,r2c7,r2c8]
+l10 = [r3c1,r3c2,r3c3,r3c4,r3c5,r3c6,r3c7,r3c8]
+l11 = [r4c1,r4c2,r4c3,r4c4,r4c5,r4c6,r4c7,r4c8]
+l12 = [r5c1,r5c2,r5c3,r5c4,r5c5,r5c6,r5c7,r5c8]
+l13 = [r6c1,r6c2,r6c3,r6c4,r6c5,r6c6,r6c7,r6c8]
+l14 = [r7c1,r7c2,r7c3,r7c4,r7c5,r7c6,r7c7,r7c8]
+l15 = [r8c1,r8c2,r8c3,r8c4,r8c5,r8c6,r8c7,r8c8]
+
+for i in range(8):                    # here have printed the overall transition values
+    sheet.cell(row=11 + p,column=14+i).value = l8[i]
+    sheet.cell(row=12 + p,column=14+i).value = l9[i]
+    sheet.cell(row=13 + p,column=14+i).value = l10[i]
+    sheet.cell(row=14 + p,column=14+i).value = l11[i]
+    sheet.cell(row=15 + p,column=14+i).value = l12[i]
+    sheet.cell(row=16 + p,column=14+i).value = l13[i]
+    sheet.cell(row=17 + p,column=14+i).value = l14[i]
+    sheet.cell(row=18 + p,column=14+i).value = l15[i]
