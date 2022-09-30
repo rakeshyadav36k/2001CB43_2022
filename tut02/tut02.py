@@ -386,3 +386,197 @@ for i in range(8):                    # here have printed the overall transition
     sheet.cell(row=16 + p,column=14+i).value = l13[i]
     sheet.cell(row=17 + p,column=14+i).value = l14[i]
     sheet.cell(row=18 + p,column=14+i).value = l15[i]
+
+
+
+r1c1 = r1c2 = r1c3 = r1c4 = r1c5 = r1c6 = r1c7 = r1c8 = 0        # we again defining the transition values are zero
+r2c1 = r2c2 = r2c3 = r2c4 = r2c5 = r2c6 = r2c7 = r2c8 = 0
+r3c1 = r3c2 = r3c3 = r3c4 = r3c5 = r3c6 = r3c7 = r3c8 = 0
+r4c1 = r4c2 = r4c3 = r4c4 = r4c5 = r4c6 = r4c7 = r4c8 = 0
+r5c1 = r5c2 = r5c3 = r5c4 = r5c5 = r5c6 = r5c7 = r5c8 = 0
+r6c1 = r6c2 = r6c3 = r6c4 = r6c5 = r6c6 = r6c7 = r6c8 = 0
+r7c1 = r7c2 = r7c3 = r7c4 = r7c5 = r7c6 = r7c7 = r7c8 = 0
+r8c1 = r8c2 = r8c3 = r8c4 = r8c5 = r8c6 = r8c7 = r8c8 = 0
+
+octant = ["+1","-1","+2","-2","+3","-3","+4","-4"]
+y=0
+new_mod = mod
+for x in range(p):                  # these codes are to compute the transition values in the a particular interval
+    for i in range(y,y+new_mod-1):
+        if(l7[i]==1):
+            if(l7[i+1]==1):
+                r1c1+=1
+            elif(l7[i+1]==-1):
+                r1c2+=1
+            elif(l7[i+1]==2):
+                r1c3+=1
+            elif(l7[i+1]==-2):
+                r1c4+=1
+            elif(l7[i+1]==3):
+                r1c5+=1
+            elif(l7[i+1]==-3):
+                r1c6+=1
+            elif(l7[i+1]==4):
+                r1c7+=1
+            elif(l7[i+1]==-4):
+                r1c8+=1
+
+        if(l7[i]==-1):
+            if(l7[i+1]==1):
+                r2c1+=1
+            elif(l7[i+1]==-1):
+                r2c2+=1
+            elif(l7[i+1]==2):
+                r2c3+=1
+            elif(l7[i+1]==-2):
+                r2c4+=1
+            elif(l7[i+1]==3):
+                r2c5+=1
+            elif(l7[i+1]==-3):
+                r2c6+=1
+            elif(l7[i+1]==4):
+                r2c7+=1
+            elif(l7[i+1]==-4):
+                r2c8+=1
+
+        if(l7[i]==2):
+            if(l7[i+1]==1):
+                r3c1+=1
+            elif(l7[i+1]==-1):
+                r3c2+=1
+            elif(l7[i+1]==2):
+                r3c3+=1
+            elif(l7[i+1]==-2):
+                r3c4+=1
+            elif(l7[i+1]==3):
+                r3c5+=1
+            elif(l7[i+1]==-3):
+                r3c6+=1
+            elif(l7[i+1]==4):
+                r3c7+=1
+            elif(l7[i+1]==-4):
+                r3c8+=1
+
+        if(l7[i]==-2):
+            if(l7[i+1]==1):
+                r4c1+=1
+            elif(l7[i+1]==-1):
+                r4c2+=1
+            elif(l7[i+1]==2):
+                r4c3+=1
+            elif(l7[i+1]==-2):
+                r4c4+=1
+            elif(l7[i+1]==3):
+                r4c5+=1
+            elif(l7[i+1]==-3):
+                r4c6+=1
+            elif(l7[i+1]==4):
+                r4c7+=1
+            elif(l7[i+1]==-4):
+                r4c8+=1
+
+        if(l7[i]==3):
+            if(l7[i+1]==1):
+                r5c1+=1
+            elif(l7[i+1]==-1):
+                r5c2+=1
+            elif(l7[i+1]==2):
+                r5c3+=1
+            elif(l7[i+1]==-2):
+                r5c4+=1
+            elif(l7[i+1]==3):
+                r5c5+=1
+            elif(l7[i+1]==-3):
+                r5c6+=1
+            elif(l7[i+1]==4):
+                r5c7+=1
+            elif(l7[i+1]==-4):
+                r5c8+=1
+
+        if(l7[i]==-3):
+            if(l7[i+1]==1):
+                r6c1+=1
+            elif(l7[i+1]==-1):
+                r6c2+=1
+            elif(l7[i+1]==2):
+                r6c3+=1
+            elif(l7[i+1]==-2):
+                r6c4+=1
+            elif(l7[i+1]==3):
+                r6c5+=1
+            elif(l7[i+1]==-3):
+                r6c6+=1
+            elif(l7[i+1]==4):
+                r6c7+=1
+            elif(l7[i+1]==-4):
+                r6c8+=1
+
+        if(l7[i]==4):
+            if(l7[i+1]==1):
+                r7c1+=1
+            elif(l7[i+1]==-1):
+                r7c2+=1
+            elif(l7[i+1]==2):
+                r7c3+=1
+            elif(l7[i+1]==-2):
+                r7c4+=1
+            elif(l7[i+1]==3):
+                r7c5+=1
+            elif(l7[i+1]==-3):
+                r7c6+=1
+            elif(l7[i+1]==4):
+                r7c7+=1
+            elif(l7[i+1]==-4):
+                r7c8+=1
+
+        if(l7[i]==-4):
+            if(l7[i+1]==1):
+                r8c1+=1
+            elif(l7[i+1]==-1):
+                r8c2+=1
+            elif(l7[i+1]==2):
+                r8c3+=1
+            elif(l7[i+1]==-2):
+                r8c4+=1
+            elif(l7[i+1]==3):
+                r8c5+=1
+            elif(l7[i+1]==-3):
+                r8c6+=1
+            elif(l7[i+1]==4):
+                r8c7+=1
+            elif(l7[i+1]==-4):
+                r8c8+=1
+
+        sheet.cell(row=21+p+x*13,column=13).value = str(y)+"-"+str(y+new_mod-1)
+    y+=mod
+    if((len(l7)-y)<mod):
+        new_mod = len(l7) - y
+    
+    #we are put the transition values in a list of list
+    new_list = [[r1c1, r1c2, r1c3, r1c4, r1c5 , r1c6, r1c7, r1c8],[r2c1 , r2c2 , r2c3 , r2c4 , r2c5 , r2c6 , r2c7 , r2c8],[r3c1 , r3c2 , r3c3 , r3c4 , r3c5 , r3c6 , r3c7 , r3c8],[r4c1 , r4c2 , r4c3 , r4c4 , r4c5 , r4c6 , r4c7 , r4c8]
+    ,[r5c1 , r5c2 , r5c3 , r5c4 , r5c5 , r5c6 , r5c7 , r5c8],[r6c1 , r6c2 , r6c3 , r6c4 , r6c5 , r6c6 , r6c7 , r6c8],[r7c1 , r7c2 , r7c3 , r7c4 , r7c5 , r7c6 , r7c7 , r7c8],[ r8c1 , r8c2 , r8c3 , r8c4 , r8c5 , r8c6 , r8c7 , r8c8]]
+
+    r1c1 = r1c2 = r1c3 = r1c4 = r1c5 = r1c6 = r1c7 = r1c8 = 0
+    r2c1 = r2c2 = r2c3 = r2c4 = r2c5 = r2c6 = r2c7 = r2c8 = 0
+    r3c1 = r3c2 = r3c3 = r3c4 = r3c5 = r3c6 = r3c7 = r3c8 = 0
+    r4c1 = r4c2 = r4c3 = r4c4 = r4c5 = r4c6 = r4c7 = r4c8 = 0
+    r5c1 = r5c2 = r5c3 = r5c4 = r5c5 = r5c6 = r5c7 = r5c8 = 0
+    r6c1 = r6c2 = r6c3 = r6c4 = r6c5 = r6c6 = r6c7 = r6c8 = 0
+    r7c1 = r7c2 = r7c3 = r7c4 = r7c5 = r7c6 = r7c7 = r7c8 = 0
+    r8c1 = r8c2 = r8c3 = r8c4 = r8c5 = r8c6 = r8c7 = r8c8 = 0
+
+    sheet.cell(row=20+p+x*13,column=13).value = "Overall Transition Count"
+    sheet.cell(row=21+p+x*13,column=14).value = "To"
+    sheet.cell(row=23+p+x*13,column=12).value = "From"
+    sheet.cell(row=22+p+x*13,column=13).value = "Count"
+
+    for j in range(8):
+        sheet.cell(row=23+p+x*13+j,column=13).value = octant[j]
+        sheet.cell(row=22+p+x*13,column=14+j).value = octant[j]
+
+        for k in range(8):     # here we have printed the mod transition values using loops
+            sheet.cell(row=23+p+x*13+j,column=14+k).value = new_list[j][k]
+            
+
+wb.save('output_octant_transition_identify_2001CB43.xlsx')
+
