@@ -156,3 +156,35 @@ sheet.cell(row=2, column=18).value = ctpos3
 sheet.cell(row=2, column=19).value = ctneg3
 sheet.cell(row=2, column=20).value = ctpos4
 sheet.cell(row=2, column=21).value = ctneg4
+
+
+mod=5000    # this is a user defined mod value
+if(len(l7)%mod!=0):           
+    p = len(l7)//mod + 1           #variable p is no of partitions
+else:
+    p = len(l7)//mod 
+
+sheet['L3'] = "User Input"
+sheet['M3'] = "Mod" + " " +str(mod)
+
+A = []              # here we have taken a list A which contains another list B(list B contains the octants values of partition)
+x=0
+new_mod = mod
+for i in range(p):
+    B = []
+    for j in range(x,x + new_mod):
+        B.append(l7[j])
+    x+=mod
+    if((len(l7)-x)<mod):
+            new_mod = len(l7) - x
+    A.append(B)
+
+
+new_octant = [1,-1,2,-2,3,-3,4,-4]   #this is a list of octant values
+for i in range(p):
+    if(mod*(i+1)<len(l7)):
+        sheet.cell(row=i+4, column=13).value = str(mod*i)+"-"+str(mod*(i+1)-1)
+    else:
+        sheet.cell(row=i+4, column=13).value = str(mod*i)+"-"+str(len(l7)-1)
+    for j in range(8):
+        sheet.cell(row=i+4, column=14+j).value = A[i].count(new_octant[j])      #we have counted the octant values in a range mod value
