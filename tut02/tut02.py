@@ -78,6 +78,8 @@ for i in range(2,len(l3)+2):
 
 sheet.cell(row=1, column=11).value = "Octant"
 
+
+
 for i in range(0,len(l1)):
     if(l4[i]>0 and l5[i]>0):
         if(l6[i]>0):
@@ -99,8 +101,15 @@ for i in range(0,len(l1)):
             sheet.cell(row=i+2, column=11).value = "+4"
         else:                                                 # this tells whether the octant is +4 or -4
             sheet.cell(row=i+2, column=11).value = "-4"
+    
+        
+#888888888888
+# l7 = df['Octant']  # this list l7 contains the all octants values
+l7=[]
+for i in range(len(l1)):
+    x=sheet.cell(row=i+2,column=11).value
+    l7.append(int(x))
 
-l7 = df['Octant']  # this list l7 contains the all octants values
 
 sheet['M2']="Overall Count"  # this is basicallly printed the header
 sheet['N1'] = "+1"
@@ -147,7 +156,3 @@ sheet.cell(row=2, column=18).value = ctpos3
 sheet.cell(row=2, column=19).value = ctneg3
 sheet.cell(row=2, column=20).value = ctpos4
 sheet.cell(row=2, column=21).value = ctneg4
-
-
-
-wb.save('input_octant_transition_identify.xlsx')
