@@ -188,3 +188,27 @@ for i in range(len(octs)-1):
     elif(octs[i]==-4 and octs[i+1]!=-4):
         list_4.append(count_4)
         count_4=1
+
+# here we have printed the longest subsequence of octants
+sheet['N2'] = max(list1)
+sheet['N3'] = max(list_1)
+sheet['N4'] = max(list2)
+sheet['N5'] = max(list_2)
+sheet['N6'] = max(list3)
+sheet['N7'] = max(list_3)
+sheet['N8'] = max(list4)
+sheet['N9'] = max(list_4)
+
+# here we have printed the howmany times maximum subsequence have occur
+sheet['O2'] = list1.count(max(list1))
+sheet['O3'] = list_1.count(max(list_1))
+sheet['O4'] = list2.count(max(list2))
+sheet['O5'] = list_2.count(max(list_2))
+sheet['O6'] = list3.count(max(list3))
+sheet['O7'] = list_3.count(max(list_3))
+sheet['O8'] = list4.count(max(list4))
+sheet['O9'] = list_4.count(max(list_4))
+
+
+
+wb.save('output_octant_longest_subsequence_2001CB43.xlsx')
