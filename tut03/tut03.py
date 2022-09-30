@@ -103,7 +103,7 @@ for i in range(0,len(l1)):
             sheet.cell(row=i+2, column=11).value = "-4"
     
 
-sheet.cell(row=1,column=13).value = "Count"
+sheet.cell(row=1,column=13).value = "Octants"
 sheet.cell(row=1,column=14).value = "Longest Sequence Length"
 sheet.cell(row=1,column=15).value = "Count"
 
@@ -111,9 +111,80 @@ list_octant = ["+1","-1","+2","-2","+3","-3","+4","-4"]
 for i in range(8):
     sheet.cell(row=2+i,column=13).value = list_octant[i]
 
+octs=[]           # we put all the octants values in list octs
+for i in range(len(l1)):
+    x=sheet.cell(row=i+2,column=11).value
+    octs.append(int(x))
 
 
+list1=[]      #list containing length of subsequents
+count1=1
+for i in range(len(octs)-1):
+    if(octs[i]==1 and octs[i+1]==1):
+        count1+=1
+    elif(octs[i]==1 and octs[i+1]!=1):
+        list1.append(count1)
+        count1=1
 
+list_1=[]      #list containing length of subsequents
+count_1=1
+for i in range(len(octs)-1):
+    if(octs[i]==-1 and octs[i+1]==-1):
+        count_1+=1
+    elif(octs[i]==-1 and octs[i+1]!=-1):
+        list_1.append(count_1)
+        count_1=1
 
+list2=[]      #list containing length of subsequents
+count2=1
+for i in range(len(octs)-1):
+    if(octs[i]==2 and octs[i+1]==2):
+        count2+=1
+    elif(octs[i]==2 and octs[i+1]!=2):
+        list2.append(count2)
+        count2=1
 
-wb.save('output_octant_longest_subsequence_2001CB43.xlsx')
+list_2=[]      #list containing length of subsequents
+count_2=1
+for i in range(len(octs)-1):
+    if(octs[i]==-2 and octs[i+1]==-2):
+        count_2+=1
+    elif(octs[i]==-2 and octs[i+1]!=-2):
+        list_2.append(count_2)
+        count_2=1
+
+list3=[]      #list containing length of subsequents
+count3=1
+for i in range(len(octs)-1):
+    if(octs[i]==3 and octs[i+1]==3):
+        count3+=1
+    elif(octs[i]==3 and octs[i+1]!=3):
+        list3.append(count3)
+        count3=1
+
+list_3=[]      #list containing length of subsequents
+count_3=1
+for i in range(len(octs)-1):
+    if(octs[i]==-3 and octs[i+1]==-3):
+        count_3+=1
+    elif(octs[i]==-3 and octs[i+1]!=-3):
+        list_3.append(count_3)
+        count_3=1
+
+list4=[]      #list containing length of subsequents
+count4=1
+for i in range(len(octs)-1):
+    if(octs[i]==4 and octs[i+1]==4):
+        count4+=1
+    elif(octs[i]==4 and octs[i+1]!=4):
+        list4.append(count4)
+        count4=1
+
+list_4=[]      #list containing length of subsequents
+count_4=1
+for i in range(len(octs)-1):
+    if(octs[i]==-4 and octs[i+1]==-4):
+        count_4+=1
+    elif(octs[i]==-4 and octs[i+1]!=-4):
+        list_4.append(count_4)
+        count_4=1
