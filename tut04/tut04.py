@@ -154,3 +154,106 @@ for i in range(len(list_1)-1):
     if(list_1[i]==max(list_1)):
         a=row_no_1[i]
         time_l_1.append([time[a],time[a+max(list_1)-1]])
+
+
+row_no2 = []            #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+list2=[]      #list containing length of subsequents
+count2=1
+for i in range(len(octs)-1):
+    if(octs[i]==2 and octs[i+1]==2):
+        count2+=1
+    elif(octs[i]==2 and octs[i+1]!=2):
+        list2.append(count2)
+        row_no2.append(i-count2+1)
+        count2=1
+
+time_l2 = []          #in this list we are collecting the range of time of a subsequence.
+for i in range(len(list2)-1):
+    if(list2[i]==max(list2)):
+        a=row_no2[i]
+        time_l2.append([time[a],time[a+max(list2)-1]])
+
+row_no_2 = []       #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+list_2=[]      #list containing length of subsequents
+count_2=1
+for i in range(len(octs)-1):
+    if(octs[i]==-2 and octs[i+1]==-2):
+        count_2+=1
+    elif(octs[i]==-2 and octs[i+1]!=-2):
+        list_2.append(count_2)
+        row_no_2.append(i-count_2+1)
+        count_2=1
+
+time_l_2 = []         #in this list we are collecting the range of time of a subsequence.
+for i in range(len(list_2)-1):
+    if(list_2[i]==max(list_2)):
+        a=row_no_2[i]
+        time_l_2.append([time[a],time[a+max(list_2)-1]])
+
+row_no3 = []           #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+list3=[]      #list containing length of subsequents
+count3=1
+for i in range(len(octs)-1):
+    if(octs[i]==3 and octs[i+1]==3):
+        count3+=1
+    elif(octs[i]==3 and octs[i+1]!=3):
+        list3.append(count3)
+        row_no3.append(i-count3+1)
+        count3=1
+
+time_l3 = []           #in this list we are collecting the range of time of a subsequence.
+for i in range(len(list3)-1):
+    if(list3[i]==max(list3)):
+        a=row_no3[i]
+        time_l3.append([time[a],time[a+max(list3)-1]])
+
+row_no_3 = []          #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+list_3=[]      #list containing length of subsequents
+count_3=1
+for i in range(len(octs)-1):
+    if(octs[i]==-3 and octs[i+1]==-3):
+        count_3+=1
+    elif(octs[i]==-3 and octs[i+1]!=-3):
+        list_3.append(count_3)
+        row_no_3.append(i-count_3+1)
+        count_3=1
+
+time_l_3 = []             #in this list we are collecting the range of time of a subsequence.
+for i in range(len(list_3)-1):
+    if(list_3[i]==max(list_3)):
+        a=row_no_3[i]
+        time_l_3.append([time[a],time[a+max(list_3)-1]])
+
+row_no4 = []          #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+list4=[]      #list containing length of subsequents
+count4=1
+for i in range(len(octs)-1):
+    if(octs[i]==4 and octs[i+1]==4):
+        count4+=1
+    elif(octs[i]==4 and octs[i+1]!=4):
+        list4.append(count4)
+        row_no4.append(i-count4+1)
+        count4=1
+ 
+time_l4 = []            #in this list we are collecting the range of time of a subsequence.
+for i in range(len(list4)-1):
+    if(list4[i]==max(list4)):
+        a=row_no4[i]
+        time_l4.append([time[a],time[a+max(list4)-1]])
+
+row_no_4 = []        #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+list_4=[]      #list containing length of subsequents
+count_4=1
+for i in range(len(octs)-1):
+    if(octs[i]==-4 and octs[i+1]==-4):
+        count_4+=1
+    elif(octs[i]==-4 and octs[i+1]!=-4):
+        list_4.append(count_4)
+        row_no_4.append(i-count_4+1)
+        count_4=1
+
+time_l_4 = []              #in this list we are collecting the range of time of a subsequence.
+for i in range(len(list_4)-1):
+    if(list_4[i]==max(list_4)):
+        a=row_no_4[i]
+        time_l_4.append([time[a],time[a+max(list_4)-1]])
