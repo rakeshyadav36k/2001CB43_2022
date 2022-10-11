@@ -306,3 +306,62 @@ sheet.cell(row=23,column=19).value = "To"
 sheet.cell(row=26,column=17).value = "Time"
 sheet.cell(row=26,column=18).value = "From"
 sheet.cell(row=26,column=19).value = "To"
+
+
+sheet.cell(row=2,column=17).value = "+1"          # we are putting the values of length of sequence, maximum count & time range of subsequence of "+1"
+sheet.cell(row=2,column=18).value = max(list1)
+sheet.cell(row=2,column=19).value = list1.count(max(list1))
+sheet.cell(row=4,column=18).value = time_l1[0][0]
+sheet.cell(row=4,column=19).value = time_l1[0][1]
+
+sheet.cell(row=5,column=17).value = "-1"            # we are putting the values of length of sequence, maximum count & time range of subsequence of "-1"
+sheet.cell(row=5,column=18).value = max(list_1)
+sheet.cell(row=5,column=19).value = list_1.count(max(list_1))
+sheet.cell(row=7,column=18).value = time_l_1[0][0]
+sheet.cell(row=7,column=19).value = time_l_1[0][1]
+sheet.cell(row=8,column=18).value = time_l_1[1][0]
+sheet.cell(row=8,column=19).value = time_l_1[1][1]
+sheet.cell(row=9,column=18).value = time_l_1[2][0]
+sheet.cell(row=9,column=19).value = time_l_1[2][1]
+
+sheet.cell(row=10,column=17).value = "+2"       # we are putting the values of length of sequence, maximum count & time range of subsequence of "+2"
+sheet.cell(row=10,column=18).value = max(list2)
+sheet.cell(row=10,column=19).value = list2.count(max(list2))
+sheet.cell(row=12,column=18).value = time_l2[0][0]
+sheet.cell(row=12,column=19).value = time_l2[0][1]
+
+sheet.cell(row=13,column=17).value = "-2"       # we are putting the values of length of sequence, maximum count & time range of subsequence of "-2"
+sheet.cell(row=13,column=18).value = max(list_2)
+sheet.cell(row=13,column=19).value = list_2.count(max(list_2))
+sheet.cell(row=15,column=18).value = time_l_2[0][0]
+sheet.cell(row=15,column=19).value = time_l_2[0][1]
+
+sheet.cell(row=16,column=17).value = "+3"         # we are putting the values of length of sequence, maximum count & time range of subsequence of "+3"
+sheet.cell(row=16,column=18).value = max(list3)
+sheet.cell(row=16,column=19).value = list3.count(max(list3))
+sheet.cell(row=18,column=18).value = time_l3[0][0]
+sheet.cell(row=18,column=19).value = time_l3[0][1]
+
+sheet.cell(row=19,column=17).value = "-3"     # we are putting the values of length of sequence, maximum count & time range of subsequence of "-3"
+sheet.cell(row=19,column=18).value = max(list_3)
+sheet.cell(row=19,column=19).value = list_3.count(max(list_3))
+sheet.cell(row=21,column=18).value = time_l_3[0][0]
+sheet.cell(row=21,column=19).value = time_l_3[0][1]
+
+sheet.cell(row=22,column=17).value = "+4"       # we are putting the values of length of sequence, maximum count & time range of subsequence of "+4"
+sheet.cell(row=22,column=18).value = max(list4)
+sheet.cell(row=22,column=19).value = list4.count(max(list4))
+sheet.cell(row=24,column=18).value = time_l4[0][0]
+sheet.cell(row=24,column=19).value = time_l4[0][1]
+
+sheet.cell(row=25,column=17).value = "-4"         # we are putting the values of length of sequence, maximum count & time range of subsequence of "-4"
+sheet.cell(row=25,column=18).value = max(list_4)
+sheet.cell(row=25,column=19).value = list_4.count(max(list_4))
+sheet.cell(row=27,column=18).value = time_l_4[0][0]
+sheet.cell(row=27,column=19).value = time_l_4[0][1]
+
+
+
+
+
+wb.save('output_octant_longest_subsequence_with_range_2001CB43.xlsx')
