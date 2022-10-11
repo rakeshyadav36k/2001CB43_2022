@@ -101,3 +101,56 @@ for i in range(0,len(l1)):
             sheet.cell(row=i+2, column=11).value = "+4"
         else:                                                 # this tells whether the octant is +4 or -4
             sheet.cell(row=i+2, column=11).value = "-4"
+    
+
+sheet.cell(row=1,column=13).value = "Octants"
+sheet.cell(row=1,column=14).value = "Longest Sequence Length"
+sheet.cell(row=1,column=15).value = "Count"
+
+list_octant = ["+1","-1","+2","-2","+3","-3","+4","-4"]
+for i in range(8):
+    sheet.cell(row=2+i,column=13).value = list_octant[i]
+
+octs=[]           # we put all the octants values in list octs
+for i in range(len(l1)):
+    x=sheet.cell(row=i+2,column=11).value
+    octs.append(int(x))
+
+time = []
+for i in range(len(l1)):
+    x=sheet.cell(row=i+2,column=1).value
+    time.append(x)
+
+row_no1 = []     #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+list1=[]      #list containing length of subsequents
+count1=1
+for i in range(len(octs)-1):
+    if(octs[i]==1 and octs[i+1]==1):
+        count1+=1
+    elif(octs[i]==1 and octs[i+1]!=1):
+        list1.append(count1)
+        row_no1.append(i-count1+1)
+        count1=1
+
+time_l1 = []        #in this list we are collecting the range of time of a subsequence.
+for i in range(len(list1)-1):
+    if(list1[i]==max(list1)):
+        a=row_no1[i]
+        time_l1.append([time[a],time[a+max(list1)-1]])
+
+row_no_1 = []          #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+list_1=[]      #list containing length of subsequents
+count_1=1
+for i in range(len(octs)-1):
+    if(octs[i]==-1 and octs[i+1]==-1):
+        count_1+=1
+    elif(octs[i]==-1 and octs[i+1]!=-1):
+        list_1.append(count_1)
+        row_no_1.append(i-count_1+1)
+        count_1=1
+
+time_l_1 = []           #in this list we are collecting the range of time of a subsequence.
+for i in range(len(list_1)-1):
+    if(list_1[i]==max(list_1)):
+        a=row_no_1[i]
+        time_l_1.append([time[a],time[a+max(list_1)-1]])
