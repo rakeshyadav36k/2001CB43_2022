@@ -277,3 +277,32 @@ sheet['O6'] = list3.count(max(list3))
 sheet['O7'] = list_3.count(max(list_3))
 sheet['O8'] = list4.count(max(list4))
 sheet['O9'] = list_4.count(max(list_4))
+
+sheet.cell(row=1,column=17).value = "Octant"
+sheet.cell(row=1,column=18).value = "Longest Subsequence Length"
+sheet.cell(row=1,column=19).value = "Count"
+
+sheet.cell(row=3,column=17).value = "Time"     # here we have written the table
+sheet.cell(row=3,column=18).value = "From"
+sheet.cell(row=3,column=19).value = "To"
+sheet.cell(row=6,column=17).value = "Time"
+sheet.cell(row=6,column=18).value = "From"
+sheet.cell(row=6,column=19).value = "To"
+sheet.cell(row=11,column=17).value = "Time"
+sheet.cell(row=11,column=18).value = "From"
+sheet.cell(row=11,column=19).value = "To"
+sheet.cell(row=14,column=17).value = "Time"
+sheet.cell(row=14,column=18).value = "From"
+sheet.cell(row=14,column=19).value = "To"
+sheet.cell(row=17,column=17).value = "Time"
+sheet.cell(row=17,column=18).value = "From"
+sheet.cell(row=17,column=19).value = "To"
+sheet.cell(row=20,column=17).value = "Time"
+sheet.cell(row=20,column=18).value = "From"
+sheet.cell(row=20,column=19).value = "To"
+sheet.cell(row=23,column=17).value = "Time"
+sheet.cell(row=23,column=18).value = "From"
+sheet.cell(row=23,column=19).value = "To"
+sheet.cell(row=26,column=17).value = "Time"
+sheet.cell(row=26,column=18).value = "From"
+sheet.cell(row=26,column=19).value = "To"
