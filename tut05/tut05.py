@@ -263,10 +263,12 @@ for i in range(p):   # made a dictionary to store the count value of each octant
     rank1.append(mod_dictionary_ct[7][0])                   
     sheet.cell(row=4+i,column=31).value=octant_id[str(mod_dictionary_ct[7][0])]
 
+# code to print the octant which 1 rank appear most
 
-sheet['N14']="Octant ID"
-sheet['O14']="Octant Name"
-sheet['P14']="Count of Rank 1 Mod 'Values"
+sheet.cell(row=14,column=14).value="Octant ID"
+sheet.cell(row=14,column=15).value="Octant Name"
+sheet.cell(row=14,column=16).value="Count of Rank 1 Mod 'Values"
+
 for i in range(8):                           
     sheet.cell(row=14+i,column=14).value=new_octant[i]
     sheet.cell(row=14+i,column=15).value=octant_id[str(new_octant[i])]
