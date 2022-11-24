@@ -10,7 +10,7 @@ import os
 from datetime import datetime
 from openpyxl.utils.dataframe import dataframe_to_rows
 
-start=datetime.now()
+start_time=datetime.now()
 
 filenames = []
 path = 'input'
@@ -1130,5 +1130,39 @@ for file in os.listdir():
         i+=l+2
 
 	
+    #####################################################
+
+    for k in range(3,30):
+        for l in range(49,52):
+            sheet.cell(row=k, column=l).border = border
+
+
+
+    for column in ["E","F","G","H","I","J","W","X","Y","Z","AB","AA","AC"]:
+        sheet.column_dimensions[column].width = 15
+
+    for column in ["AD","AE","AF","AI","AS","AT","AX"]:
+        sheet.column_dimensions[column].width = 30
+
+    for column in ["O","P","Q","R","S","T","U","V","AJ","AK","AL","AM","AN","AO","AP","AQ","AU","AY"]:
+        sheet.column_dimensions[column].width = 6
+
+    for column in ["AW"]:
+        sheet.column_dimensions[column].width = 38
+    for column in ["N"]:
+        sheet.column_dimensions[column].width = 22
+
+    os.chdir(cwd)                             # we save the output file and changing the directory to take a ne input file
+    os.chdir(path_out)
+    wb.save('{}_vel_octant_analysis_mod_{}.xlsx'.format(file_name,str(mod)))
+    os.chdir(cwd)
+    os.chdir(path)
+
+
+
+
+end_time=datetime.now()
+
+print("time taken is: ",end_time-start_time)
 
 
