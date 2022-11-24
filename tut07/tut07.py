@@ -621,4 +621,119 @@ for file in os.listdir():
                 sheet.cell(row=12+p+x*13+j, column=36+k).border = border
 
 
+	##**************************************************************************************************************##
 
+
+    sheet.cell(row=1,column=45).value = "Longest Sequence Length"
+    sheet.cell(row=3,column=45).value = "Octant ##"
+    sheet.cell(row=3,column=46).value = "Longest Sequence Length"
+    sheet.cell(row=3,column=47).value = "Count"
+    for i in range(3):
+        sheet.cell(row=3,column=45+i).border = border
+
+    list_octant = ["+1","-1","+2","-2","+3","-3","+4","-4"]
+    for i in range(8):
+        sheet.cell(row=4+i,column=45).value = list_octant[i]
+        sheet.cell(row=4+i,column=45).border = border
+
+    octs=[]           # we put all the octants values in list octs
+    for i in range(len(l1)):
+        x=sheet.cell(row=i+2,column=11).value
+        octs.append(int(x))
+
+
+    list1=[]      #list containing length of subsequents
+    count1=1
+    for i in range(len(octs)-1):
+        if(octs[i]==1 and octs[i+1]==1):
+            count1+=1
+        elif(octs[i]==1 and octs[i+1]!=1):
+            list1.append(count1)
+            count1=1
+
+    list_1=[]      #list containing length of subsequents
+    count_1=1
+    for i in range(len(octs)-1):
+        if(octs[i]==-1 and octs[i+1]==-1):
+            count_1+=1
+        elif(octs[i]==-1 and octs[i+1]!=-1):
+            list_1.append(count_1)
+            count_1=1
+
+    list2=[]      #list containing length of subsequents
+    count2=1
+    for i in range(len(octs)-1):
+        if(octs[i]==2 and octs[i+1]==2):
+            count2+=1
+        elif(octs[i]==2 and octs[i+1]!=2):
+            list2.append(count2)
+            count2=1
+
+    list_2=[]      #list containing length of subsequents
+    count_2=1
+    for i in range(len(octs)-1):
+        if(octs[i]==-2 and octs[i+1]==-2):
+            count_2+=1
+        elif(octs[i]==-2 and octs[i+1]!=-2):
+            list_2.append(count_2)
+            count_2=1
+
+    list3=[]      #list containing length of subsequents
+    count3=1
+    for i in range(len(octs)-1):
+        if(octs[i]==3 and octs[i+1]==3):
+            count3+=1
+        elif(octs[i]==3 and octs[i+1]!=3):
+            list3.append(count3)
+            count3=1
+
+    list_3=[]      #list containing length of subsequents
+    count_3=1
+    for i in range(len(octs)-1):
+        if(octs[i]==-3 and octs[i+1]==-3):
+            count_3+=1
+        elif(octs[i]==-3 and octs[i+1]!=-3):
+            list_3.append(count_3)
+            count_3=1
+
+    list4=[]      #list containing length of subsequents
+    count4=1
+    for i in range(len(octs)-1):
+        if(octs[i]==4 and octs[i+1]==4):
+            count4+=1
+        elif(octs[i]==4 and octs[i+1]!=4):
+            list4.append(count4)
+            count4=1
+
+    list_4=[]      #list containing length of subsequents
+    count_4=1
+    for i in range(len(octs)-1):
+        if(octs[i]==-4 and octs[i+1]==-4):
+            count_4+=1
+        elif(octs[i]==-4 and octs[i+1]!=-4):
+            list_4.append(count_4)
+            count_4=1
+
+    # here we have printed the longest subsequence of octants
+    sheet['AT4'] = max(list1)
+    sheet['AT5'] = max(list_1)
+    sheet['AT6'] = max(list2)
+    sheet['AT7'] = max(list_2)
+    sheet['AT8'] = max(list3)
+    sheet['AT9'] = max(list_3)
+    sheet['AT10'] = max(list4)
+    sheet['AT11'] = max(list_4)
+
+    # here we have printed the howmany times maximum subsequence have occur
+    sheet['AU4'] = list1.count(max(list1))
+    sheet['AU5'] = list_1.count(max(list_1))
+    sheet['AU6'] = list2.count(max(list2))
+    sheet['AU7'] = list_2.count(max(list_2))
+    sheet['AU8'] = list3.count(max(list3))
+    sheet['AU9'] = list_3.count(max(list_3))
+    sheet['AU10'] = list4.count(max(list4))
+    sheet['AU11'] = list_4.count(max(list_4))
+
+    for i in range(4,12):
+        for j in range(46,48):
+            sheet.cell(row=i,column=j).border = border
