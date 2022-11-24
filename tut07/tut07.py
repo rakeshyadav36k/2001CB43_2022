@@ -737,3 +737,147 @@ for file in os.listdir():
     for i in range(4,12):
         for j in range(46,48):
             sheet.cell(row=i,column=j).border = border
+
+
+	   #################################################################################################################
+    #################################################################################################################
+
+    for i in range(8):
+        sheet.cell(row=3,column=23+i).value = "rank of "+str(new_octant[i])
+        sheet.cell(row=3,column=23+i).border = border
+
+
+    dictionary_ct={1:ctpos1,-1:ctneg1,2:ctpos2,-2:ctneg2,3:ctpos3,-3:ctneg3,4:ctpos4,-4:ctneg4}
+    dictionary_ct=dict(sorted(dictionary_ct.items(), key=lambda item:item[1]))
+    dictionary_ct=list(dictionary_ct.items())
+
+    for i in range(8):                        # code to print rank 1 in overall count
+        if(dictionary_ct[i][0]==1):
+            sheet.cell(row=4,column=23).value=8-i
+            sheet.cell(row=4,column=23).border = border
+            if((8-i)==1):
+                sheet.cell(row=4, column=23).fill = pattern
+        elif(dictionary_ct[i][0]==-1):
+            sheet.cell(row=4,column=24).value=8-i
+            sheet.cell(row=4,column=24).border = border
+            if((8-i)==1):
+                sheet.cell(row=4, column=24).fill = pattern
+        elif(dictionary_ct[i][0]==2):
+            sheet.cell(row=4,column=25).value=8-i
+            sheet.cell(row=4,column=25).border = border
+            if((8-i)==1):
+                sheet.cell(row=4, column=25).fill = pattern
+        elif(dictionary_ct[i][0]==-2):
+            sheet.cell(row=4,column=26).value=8-i
+            sheet.cell(row=4,column=26).border = border
+            if((8-i)==1):
+                sheet.cell(row=4, column=26).fill = pattern
+        elif(dictionary_ct[i][0]==3):
+            sheet.cell(row=4,column=27).value=8-i
+            sheet.cell(row=4,column=27).border = border
+            if((8-i)==1):
+                sheet.cell(row=4, column=27).fill = pattern
+        elif(dictionary_ct[i][0]==-3):
+            sheet.cell(row=4,column=28).value=8-i
+            sheet.cell(row=4,column=28).border = border
+            if((8-i)==1):
+                sheet.cell(row=4, column=28).fill = pattern
+        elif(dictionary_ct[i][0]==4):
+            sheet.cell(row=4,column=29).value=8-i
+            sheet.cell(row=4,column=29).border = border
+            if((8-i)==1):
+                sheet.cell(row=4, column=29).fill = pattern
+        elif(dictionary_ct[i][0]==-4):
+            sheet.cell(row=4,column=30).value=8-i
+            sheet.cell(row=4,column=30).border = border
+            if((8-i)==1):
+                sheet.cell(row=4, column=30).fill = pattern
+    
+    
+
+    sheet['AE3'] = "Rank1 Octant ID"
+    sheet['AE3'].border = border
+    sheet['AF3'] = "Rank1 Octant Name"
+    sheet['AF3'].border = border
+
+    octant_id = {"1":"Internal outward interaction", "-1":"External outward interaction", "2":"External Ejection", "-2":"Internal Ejection", "3":"External inward interaction", "-3":"Internal inward interaction", "4":"Internal sweep", "-4":"External sweep"}
+    sheet['AE4']=dictionary_ct[7][0]
+    sheet['AE4'].border = border
+    sheet['AF4']=octant_id[str(dictionary_ct[7][0])]
+    sheet['AF4'].border = border
+
+    rank1=[]    # this list stores the number of rank 1 octants
+
+    for i in range(p):   # made a dictionary to store the count value of each octants
+        mod_dictionary_ct={1:A[i].count(1), -1:A[i].count(-1),2:A[i].count(2),-2:A[i].count(-2),3:A[i].count(3),-3:A[i].count(-3),4:A[i].count(4),-4:A[i].count(-4)}
+        mod_dictionary_ct=dict(sorted(mod_dictionary_ct.items(),key=lambda item:item[1]))     # sorted the values in increasing order
+        mod_dictionary_ct=list(mod_dictionary_ct.items())    # and make a list of that dictionary
+
+        for j in range(8):                  # code to print the rank of octants in mod values
+            if(mod_dictionary_ct[j][0]==1):
+                sheet.cell(row=5+i,column=23).value=8-j
+                sheet.cell(row=5+i,column=23).border = border
+                if((8-j)==1):
+                    sheet.cell(row=5+i, column=23).fill = pattern
+            elif(mod_dictionary_ct[j][0]==-1):
+                sheet.cell(row=5+i,column=24).value=8-j
+                sheet.cell(row=5+i,column=24).border = border
+                if((8-j)==1):
+                    sheet.cell(row=5+i, column=24).fill = pattern
+            elif(mod_dictionary_ct[j][0]==2):
+                sheet.cell(row=5+i,column=25).value=8-j
+                sheet.cell(row=5+i,column=25).border = border
+                if((8-j)==1):
+                    sheet.cell(row=5+i, column=25).fill = pattern
+            elif(mod_dictionary_ct[j][0]==-2):
+                sheet.cell(row=5+i,column=26).value=8-j
+                sheet.cell(row=5+i,column=26).border = border
+                if((8-j)==1):
+                    sheet.cell(row=5+i, column=26).fill = pattern
+            elif(mod_dictionary_ct[j][0]==3):
+                sheet.cell(row=5+i,column=27).value=8-j
+                sheet.cell(row=5+i,column=27).border = border
+                if((8-j)==1):
+                    sheet.cell(row=5+i, column=27).fill = pattern
+            elif(mod_dictionary_ct[j][0]==-3):
+                sheet.cell(row=5+i,column=28).value=8-j
+                sheet.cell(row=5+i,column=28).border = border
+                if((8-j)==1):
+                    sheet.cell(row=5+i, column=28).fill = pattern
+            elif(mod_dictionary_ct[j][0]==4):
+                sheet.cell(row=5+i,column=29).value=8-j
+                sheet.cell(row=5+i,column=29).border = border
+                if((8-j)==1):
+                    sheet.cell(row=5+i, column=29).fill = pattern
+            elif(mod_dictionary_ct[j][0]==-4):
+                sheet.cell(row=5+i,column=30).value=8-j
+                sheet.cell(row=5+i,column=30).border = border
+                if((8-j)==1):
+                    sheet.cell(row=5+i, column=30).fill = pattern
+
+        sheet.cell(row=5+i,column=31).value=mod_dictionary_ct[7][0]
+        sheet.cell(row=5+i,column=31).border = border
+        rank1.append(mod_dictionary_ct[7][0])                   
+        sheet.cell(row=5+i,column=32).value=octant_id[str(mod_dictionary_ct[7][0])]
+        sheet.cell(row=5+i,column=32).border = border
+
+    # for i in range(3,11):
+    #     for j in range(14,34):
+            # sheet.cell(row=i, column=j).border = border
+
+    # code to print the octant which 1 rank appear most
+
+    sheet.cell(row=6+p,column=29).value="Octant ID"
+    sheet.cell(row=6+p,column=29).border = border
+    sheet.cell(row=6+p,column=30).value="Octant Name"
+    sheet.cell(row=6+p,column=30).border= border
+    sheet.cell(row=6+p,column=31).value="Count of Rank 1 Mod Values"
+    sheet.cell(row=6+p,column=31).border=border
+
+    for i in range(8):                           # code for rank 1 ID
+        sheet.cell(row=7+p+i,column=29).value=str(new_octant[i])
+        sheet.cell(row=7+p+i,column=29).border = border
+        sheet.cell(row=7+p+i,column=30).value=octant_id[str(new_octant[i])]
+        sheet.cell(row=7+p+i,column=30).border = border
+        sheet.cell(row=7+p+i,column=31).value=rank1.count(new_octant[i])
+        sheet.cell(row=7+p+i,column=31).border = border
