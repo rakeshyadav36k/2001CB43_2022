@@ -861,9 +861,7 @@ for file in os.listdir():
         sheet.cell(row=5+i,column=32).value=octant_id[str(mod_dictionary_ct[7][0])]
         sheet.cell(row=5+i,column=32).border = border
 
-    # for i in range(3,11):
-    #     for j in range(14,34):
-            # sheet.cell(row=i, column=j).border = border
+    
 
     # code to print the octant which 1 rank appear most
 
