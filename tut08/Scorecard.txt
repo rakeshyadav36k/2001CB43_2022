@@ -1,0 +1,63 @@
+India won by 5 wkts
+Pakistan Innings					147-10 (19.5 Ov)
+                                            status   R   B  4s  6s      SR
+ Rizwan              c avesh khan b Hardik Pandya   43  42   4   1  102.38
+ Babar Azam        c arshdeep singh b Bhuvneshwar   10   9   2   0  111.11
+ Fakhar Zaman              c karthik b Avesh Khan   10   6   2   0  166.67
+ Iftikhar Ahmed         c karthik b Hardik Pandya   28  22   2   1  127.27
+ Khushdil                c jadeja b Hardik Pandya    2   7   0   0   28.57
+ Shadab Khan                    lbw b Bhuvneshwar   10   9   1   0  111.11
+ Asif Ali        c suryakumar yadav b Bhuvneshwar    9   7   0   0  128.57
+ Mohammad Nawaz        c karthik b Arshdeep Singh    1   3   0   0   33.33
+ Haris Rauf                                not out  13   7   2   0  185.71
+ Naseem Shah                    lbw b Bhuvneshwar    0   1   0   0    0.00
+ Dahani                          b Arshdeep Singh   16   6   0   2  266.67
+
+Extras		5(b 1, lb 0, w 4, nb 0, p 0)
+
+Total		147 (10 wkts, 19.5 Ov)
+
+Fall of Wickets
+15-1( Babar Azam,2.4) 42-2( Fakhar Zaman,5.5) 87-3( Iftikhar Ahmed,12.1) 96-4( Rizwan,14.1) 97-5( Khushdil,14.3) 112-6( Asif Ali,16.3) 114-7( Mohammad Nawaz,17.1) 128-8( Shadab Khan,18.2) 128-9( Naseem Shah,18.3) 147-10( Dahani,19.5)
+
+
+                    O  M   R  W  NB  WD    EC
+ Bhuvneshwar      4.0  0  26  4   0   0  6.50
+ Arshdeep Singh   3.5  0  33  2   0   2  9.43
+ Hardik Pandya    4.0  0  25  3   0   2  6.25
+ Avesh Khan       2.0  0  19  1   0   0  9.50
+ Chahal           4.0  0  32  0   0   0  8.00
+ Jadeja           2.0  0  11  0   0   0  5.50
+
+Powerplays		Overs		Runs
+Mandatory		0.1-6		43
+
+
+India Innings							148-5 (19.4 Ov)
+                                               status   R   B  4s  6s      SR
+ Rohit             c iftikhar ahmed b Mohammad Nawaz   12  18   0   1   66.67
+ Rahul                                 b Naseem Shah    0   1   0   0    0.00
+ Kohli             c iftikhar ahmed b Mohammad Nawaz   35  34   3   1  102.94
+ Jadeja                             b Mohammad Nawaz   35  29   2   2  120.69
+ Suryakumar Yadav                      b Naseem Shah   18  18   1   0  100.00
+ Hardik Pandya                                not out  33  17   4   1  194.12
+ Karthik                                      not out   1   1   0   0  100.00
+
+Extras		14(b 0, lb 5, w 9, nb 0, p 0)
+
+Total		148 (5 wkts, 19.4 Ov)
+
+Fall of Wickets
+1-1( Rahul,0.2) 50-2( Rohit,7.6) 53-3( Kohli,9.1) 89-4( Suryakumar Yadav,14.2) 141-5( Jadeja,19.1)
+
+
+                    O  M   R  W  NB  WD    EC
+ Naseem Shah      4.0  0  27  2   0   2  6.75
+ Dahani           4.0  0  29  0   0   4  7.25
+ Haris Rauf       4.0  0  35  0   0   3  8.75
+ Shadab Khan      4.0  0  19  0   0   0  4.75
+ Mohammad Nawaz   3.4  0  33  3   0   0  9.71
+
+Powerplays		Overs		Runs
+Mandatory		0.1-6		38
+Duration of Program Execution: 0:00:00.166627
