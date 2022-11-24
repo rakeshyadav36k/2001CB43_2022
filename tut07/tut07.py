@@ -881,3 +881,254 @@ for file in os.listdir():
         sheet.cell(row=7+p+i,column=30).border = border
         sheet.cell(row=7+p+i,column=31).value=rank1.count(new_octant[i])
         sheet.cell(row=7+p+i,column=31).border = border
+
+	#################################################################################################################
+    #################################################################################################################
+
+    time = []
+    for i in range(len(l1)):
+        x=sheet.cell(row=i+2,column=1).value
+        time.append(x)
+
+    row_no1 = []     #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+    list1=[]      #list containing length of subsequents
+    count1=1
+    for i in range(len(octs)-1):
+        if(octs[i]==1 and octs[i+1]==1):
+            count1+=1
+        elif(octs[i]==1 and octs[i+1]!=1):
+            list1.append(count1)
+            row_no1.append(i-count1+1)
+            count1=1
+
+    time_l1 = []        #in this list we are collecting the range of time of a subsequence.
+    for i in range(len(list1)-1):
+        if(list1[i]==max(list1)):
+            a=row_no1[i]
+            time_l1.append([time[a],time[a+max(list1)-1]])
+
+    row_no_1 = []          #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+    list_1=[]      #list containing length of subsequents
+    count_1=1
+    for i in range(len(octs)-1):
+        if(octs[i]==-1 and octs[i+1]==-1):
+            count_1+=1
+        elif(octs[i]==-1 and octs[i+1]!=-1):
+            list_1.append(count_1)
+            row_no_1.append(i-count_1+1)
+            count_1=1
+
+    time_l_1 = []           #in this list we are collecting the range of time of a subsequence.
+    for i in range(len(list_1)-1):
+        if(list_1[i]==max(list_1)):
+            a=row_no_1[i]
+            time_l_1.append([time[a],time[a+max(list_1)-1]])
+
+
+    row_no2 = []            #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+    list2=[]      #list containing length of subsequents
+    count2=1
+    for i in range(len(octs)-1):
+        if(octs[i]==2 and octs[i+1]==2):
+            count2+=1
+        elif(octs[i]==2 and octs[i+1]!=2):
+            list2.append(count2)
+            row_no2.append(i-count2+1)
+            count2=1
+
+    time_l2 = []          #in this list we are collecting the range of time of a subsequence.
+    for i in range(len(list2)-1):
+        if(list2[i]==max(list2)):
+            a=row_no2[i]
+            time_l2.append([time[a],time[a+max(list2)-1]])
+
+    row_no_2 = []       #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+    list_2=[]      #list containing length of subsequents
+    count_2=1
+    for i in range(len(octs)-1):
+        if(octs[i]==-2 and octs[i+1]==-2):
+            count_2+=1
+        elif(octs[i]==-2 and octs[i+1]!=-2):
+            list_2.append(count_2)
+            row_no_2.append(i-count_2+1)
+            count_2=1
+
+    time_l_2 = []         #in this list we are collecting the range of time of a subsequence.
+    for i in range(len(list_2)-1):
+        if(list_2[i]==max(list_2)):
+            a=row_no_2[i]
+            time_l_2.append([time[a],time[a+max(list_2)-1]])
+
+    row_no3 = []           #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+    list3=[]      #list containing length of subsequents
+    count3=1
+    for i in range(len(octs)-1):
+        if(octs[i]==3 and octs[i+1]==3):
+            count3+=1
+        elif(octs[i]==3 and octs[i+1]!=3):
+            list3.append(count3)
+            row_no3.append(i-count3+1)
+            count3=1
+
+    time_l3 = []           #in this list we are collecting the range of time of a subsequence.
+    for i in range(len(list3)-1):
+        if(list3[i]==max(list3)):
+            a=row_no3[i]
+            time_l3.append([time[a],time[a+max(list3)-1]])
+
+    row_no_3 = []          #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+    list_3=[]      #list containing length of subsequents
+    count_3=1
+    for i in range(len(octs)-1):
+        if(octs[i]==-3 and octs[i+1]==-3):
+            count_3+=1
+        elif(octs[i]==-3 and octs[i+1]!=-3):
+            list_3.append(count_3)
+            row_no_3.append(i-count_3+1)
+            count_3=1
+
+    time_l_3 = []             #in this list we are collecting the range of time of a subsequence.
+    for i in range(len(list_3)-1):
+        if(list_3[i]==max(list_3)):
+            a=row_no_3[i]
+            time_l_3.append([time[a],time[a+max(list_3)-1]])
+
+    row_no4 = []          #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+    list4=[]      #list containing length of subsequents
+    count4=1
+    for i in range(len(octs)-1):
+        if(octs[i]==4 and octs[i+1]==4):
+            count4+=1
+        elif(octs[i]==4 and octs[i+1]!=4):
+            list4.append(count4)
+            row_no4.append(i-count4+1)
+            count4=1
+    
+    time_l4 = []            #in this list we are collecting the range of time of a subsequence.
+    for i in range(len(list4)-1):
+        if(list4[i]==max(list4)):
+            a=row_no4[i]
+            time_l4.append([time[a],time[a+max(list4)-1]])
+
+    row_no_4 = []        #we have created this list to store the row number of the row form which a subsequence is starting. this row number is the index of list of time.
+    list_4=[]      #list containing length of subsequents
+    count_4=1
+    for i in range(len(octs)-1):
+        if(octs[i]==-4 and octs[i+1]==-4):
+            count_4+=1
+        elif(octs[i]==-4 and octs[i+1]!=-4):
+            list_4.append(count_4)
+            row_no_4.append(i-count_4+1)
+            count_4=1
+
+    time_l_4 = []              #in this list we are collecting the range of time of a subsequence.
+    for i in range(len(list_4)-1):
+        if(list_4[i]==max(list_4)):
+            a=row_no_4[i]
+            time_l_4.append([time[a],time[a+max(list_4)-1]])
+
+
+    sheet.cell(row=1,column=49).value = "Longest Subsquence Length with Range"
+    sheet.cell(row=3,column=49).value = "Octant ##"
+    sheet.cell(row=3,column=50).value = "Longest Subsequence Length"
+    sheet.cell(row=3,column=51).value = "Count"
+
+    octant=[1,-1,2,-2,3,-3,4,-4]
+    i=4                                                  # the whole code is to print the time range of longest subsequence for octants
+    for oct in octant:
+        sheet.cell(row=i+1,column=49).value="Time"
+        sheet.cell(row=i+1,column=50).value="From"
+        sheet.cell(row=i+1,column=51).value="To"
+        if oct==1:
+            sheet.cell(row=i,column=49).value="+1"
+            sheet.cell(row=i,column=50).value=max(list1)
+            sheet.cell(row=i,column=51).value=list1.count(max(list1))
+
+            l=0
+            while l<len(time_l1):
+                sheet.cell(row=i+2+l,column=50).value=time_l1[l][0]
+                sheet.cell(row=i+2+l,column=51).value=time_l1[l][1]
+                l+=1
+
+        elif oct==-1:
+            sheet.cell(row=i,column=49).value="-1"
+            sheet.cell(row=i,column=50).value=max(list_1)
+            sheet.cell(row=i,column=51).value=list_1.count(max(list_1))
+
+            l=0
+            while l<len(time_l_1):
+                sheet.cell(row=i+2+l,column=50).value=time_l_1[l][0]
+                sheet.cell(row=i+2+l,column=51).value=time_l_1[l][1]
+                l+=1
+
+        elif oct==2:
+            sheet.cell(row=i,column=49).value="+2"
+            sheet.cell(row=i,column=50).value=max(list2)
+            sheet.cell(row=i,column=51).value=list2.count(max(list2))
+
+            l=0
+            while l<len(time_l2):
+                sheet.cell(row=i+2+l,column=50).value=time_l2[l][0]
+                sheet.cell(row=i+2+l,column=51).value=time_l2[l][1]
+                l+=1
+
+        elif oct==-2:
+            sheet.cell(row=i,column=49).value="-2"
+            sheet.cell(row=i,column=50).value=max(list_2)
+            sheet.cell(row=i,column=51).value=list_2.count(max(list_2))
+
+            l=0
+            while l<len(time_l_2):
+                sheet.cell(row=i+2+l,column=50).value=time_l_2[l][0]
+                sheet.cell(row=i+2+l,column=51).value=time_l_2[l][1]
+                l+=1
+
+        elif oct==3:
+            sheet.cell(row=i,column=49).value="+3"
+            sheet.cell(row=i,column=50).value=max(list3)
+            sheet.cell(row=i,column=51).value=list3.count(max(list3))
+
+            l=0
+            while l<len(time_l3):
+                sheet.cell(row=i+2+l,column=50).value=time_l3[l][0]
+                sheet.cell(row=i+2+l,column=51).value=time_l3[l][1]
+                l+=1
+
+        elif oct==-3:
+            sheet.cell(row=i,column=49).value="-3"
+            sheet.cell(row=i,column=50).value=max(list_3)
+            sheet.cell(row=i,column=51).value=list_3.count(max(list_3))
+
+            l=0
+            while l<len(time_l_3):
+                sheet.cell(row=i+2+l,column=50).value=time_l_3[l][0]
+                sheet.cell(row=i+2+l,column=51).value=time_l_3[l][1]
+                l+=1
+
+        elif oct==4:
+            sheet.cell(row=i,column=49).value="+4"
+            sheet.cell(row=i,column=50).value=max(list4)
+            sheet.cell(row=i,column=51).value=list4.count(max(list4))
+
+            l=0
+            while l<len(time_l4):
+                sheet.cell(row=i+2+l,column=50).value=time_l4[l][0]
+                sheet.cell(row=i+2+l,column=51).value=time_l4[l][1]
+                l+=1
+
+        elif oct==-4:
+            sheet.cell(row=i,column=49).value="-4"
+            sheet.cell(row=i,column=50).value=max(list_4)
+            sheet.cell(row=i,column=51).value=list_4.count(max(list_4))
+
+            l=0
+            while l<len(time_l_4):
+                sheet.cell(row=i+2+l,column=50).value=time_l_4[l][0]
+                sheet.cell(row=i+2+l,column=51).value=time_l_4[l][1]
+                l+=1
+
+        i+=l+2
+
+	
+
+
