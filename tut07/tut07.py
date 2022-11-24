@@ -4,13 +4,12 @@ from openpyxl import load_workbook
 from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.styles import Border, Side
 from openpyxl.styles import PatternFill
-import numpy as np
 import pandas as pd
 import os
 from datetime import datetime
 from openpyxl.utils.dataframe import dataframe_to_rows
 
-start_time=datetime.now()
+start_time = datetime.now()
 
 filenames = []
 path = 'input'
@@ -50,9 +49,9 @@ for file in os.listdir():
     Vavg = df['V'].mean()
     Wavg = df['W'].mean()
 
-    sheet.cell(row=2, column=5).value = Uavg   # added the average values in the sheet
-    sheet.cell(row=2, column=6).value = Vavg 
-    sheet.cell(row=2, column=7).value = Wavg 
+    sheet.cell(row=2, column=5).value = Uavg          # added the average values in the sheet
+    sheet.cell(row=2, column=6).value = Vavg          # not converted these values in upto three decimal because these valuse are very less and on keep it in upto three decimal it showing zero.
+    sheet.cell(row=2, column=7).value = Wavg
 
     l1 = df['U']            # creating the list l1,l2,l3 which consist the element of U,V,W respectively
     l2 = df['V']
@@ -68,7 +67,7 @@ for file in os.listdir():
         l4.append(a)
 
     for i in range(2,len(l1)+2):
-        sheet.cell(row=i, column=8).value = l4[i-2]
+        sheet.cell(row=i, column=8).value = format(l4[i-2],"0.3f")
 
     l5=[]
     for i in l2:
@@ -76,7 +75,7 @@ for file in os.listdir():
         l5.append(a)
 
     for i in range(2,len(l2)+2):
-        sheet.cell(row=i, column=9).value = l5[i-2]
+        sheet.cell(row=i, column=9).value = format(l5[i-2],"0.3f")
 
     l6=[]
     for i in l3:
@@ -84,7 +83,7 @@ for file in os.listdir():
         l6.append(a)
 
     for i in range(2,len(l3)+2):
-        sheet.cell(row=i, column=10).value = l6[i-2]
+        sheet.cell(row=i, column=10).value = format(l6[i-2],"0.3f")
 
     #************************************
 
@@ -1137,7 +1136,7 @@ for file in os.listdir():
 
 
     for column in ["E","F","G","H","I","J","W","X","Y","Z","AB","AA","AC"]:
-        sheet.column_dimensions[column].width = 15
+        sheet.column_dimensions[column].width = 15                           # have set the width of the some column
 
     for column in ["AD","AE","AF","AI","AS","AT","AX"]:
         sheet.column_dimensions[column].width = 30
@@ -1159,7 +1158,7 @@ for file in os.listdir():
 
 
 
-end_time=datetime.now()
+end_time = datetime.now()
 
 print("time taken is: ",end_time-start_time)
 
