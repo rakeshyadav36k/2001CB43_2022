@@ -34,17 +34,17 @@ def attendance_report():
                     actl_atten.append(student_roll_no)       
         else:
             fake_atten.append((str(df['Attendance'][i])).split(" ")[0])
-        
+
     for i in range(len(registered_students['Name'])):   #loop is to print the attendance report for each student 
         
         for date in date_list:   # loop to check date on which date student are present or absent
             if date.strftime('%d-%m-%Y') in attended_dates[registered_students['Roll No'][i]]:
-                dfc.at[i, date.strftime('%d-%m-%Y')]='P'
+                df1.at[i, date.strftime('%d-%m-%Y')]='P'
             else:
-                dfc.at[i, date.strftime('%d-%m-%Y')]='A'
-        dfc.at[i,'Actual Lecture Taken']=len(date_list)
-        dfc.at[i,'Total Real Attendance']=actl_atten.count(registered_students['Roll No'][i])
-        dfc.at[i,'Percentage (attendance_count_actual/total_lecture_taken) 2 digit decimal']=(round((dfc['Total Real Attendance'][i]/len(date_list))*100,2))
+                df1.at[i, date.strftime('%d-%m-%Y')]='A'
+        df1.at[i,'Actual Lecture Taken']=len(date_list)
+        df1.at[i,'Total Real Attendance']=actl_atten.count(registered_students['Roll No'][i])
+        df1.at[i,'Percentage (attendance_count_actual/total_lecture_taken) 2 digit decimal']=(round((df1['Total Real Attendance'][i]/len(date_list))*100,2))
  
         seperate = pd.DataFrame()    # taken a dataframe to store the attendence of all students
         seperate.at[0, 'Date']=''
@@ -70,7 +70,8 @@ def attendance_report():
         except PermissionError:
             print("You don't have the permission to read/write in this directory. Please grant permission or change the working directory")
 
-
+    
+    
 
 from platform import python_version    #  imported some libraries
 from datetime import datetime
