@@ -12,7 +12,31 @@ def attendance_report():
     attended_dates = {roll_number : [] for roll_number in roll_numbers}
     fake_atten=[]
     fake_info = {roll_number : {date.strftime('%d-%m-%Y') : 0 for date in date_list} for roll_number in roll_numbers}
+
+    for i in range(len(df['Timestamp'])):      # loop is to find the students who have actual attendence, fake attendance & duplicate attendance
+        ect = datetime.strptime(str(df['Timestamp'][i]), '%d-%m-%Y %H:%M')
+        date = ect.date()
+        
+        if ect.weekday() == 0 or ect.weekday() == 3:  #Check if the person attended the class on monday or thursday
+            if(ect.hour<14 or ect.hour>=15):
+                fake_atten.append((str(df['Attendance'][i])).split(" ")[0])
+                fake_info[(str(df['Attendance'][i])).split(" ")[0]][date.strftime('%d-%m-%Y')]+=1
+            if(ect.hour==14):
+                student_roll_no=(str(df['Attendance'][i])).split(" ")[0]
+                if student_roll_no == 'nan' or student_roll_no not in roll_numbers:
+                    continue
+                if student_roll_no in duplicate[date]:
+                    duplicate[date][student_roll_no]['entries'].append(ect)
+                    duplct_info[(str(df['Attendance'][i])).split(" ")[0]][date.strftime('%d-%m-%Y')]+=1
+                else:
+                    duplicate[date][student_roll_no] = {'name': df['Attendance'][i].split(' ', 1)[1], 'entries': [ect]}
+                    attended_dates[student_roll_no].append(date.strftime('%d-%m-%Y'))
+                    actl_atten.append(student_roll_no)       
+        else:
+            fake_atten.append((str(df['Attendance'][i])).split(" ")[0])
+        
     
+
 
 from platform import python_version    #  imported some libraries
 from datetime import datetime
