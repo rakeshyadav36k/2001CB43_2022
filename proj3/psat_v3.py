@@ -36,6 +36,7 @@ g=9.81
 with open(r"Results_v2.csv",mode='a') as file_:
     file_.write("{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}".format(start_time.strftime("%c"),"average_velocity_U","average_velocity_V","average_velocity_W","U_variance_Prime","V_variance_Prime","W_variance_Prime","U_stdev_Prime","V_stdev_Prime","W_stdev_Prime","Skewness_U_Prime","Skewness_V_Prime","Skewness_W_Prime","Kurtosis_U_Prime","Kurtosis_V_Prime","Kurtosis_W_Prime","Reynolds_stress_u\'v\'","Reynolds_stress_u\'w\'","Reynolds_stress_v\'w\'","Anisotropy","M30","M03","M12","M21","fku_2d","Fku_2d","fkw_2d","Fkw_2d","fku_3d","Fku_3d","fkw_3d","Fkw_3d","TKE_3d","Q1_K_Value","Q2_K_Value","Q3_K_Value","Q4_K_Value","e","ED","Octant_plus_1","Octant_minus_1","Octant_plus_2","Octant_minus_2","Octant_plus_3","Octant_minus_3","Octant_plus_4","Octant_minus_4","Total_Octant_sample","Probability_Octant_plus_1","Probability_Octant_minus_1","Probability_Octant_plus_2","Probability_Octant_minus_2","Probability_Octant_plus_3","Probability_Octant_minus_3","Probability_Octant_plus_4","Probability_Octant_minus_4","Min_Octant_Count","Min_Octant_Count_id","Max_Octant_Count","Max_Octant_Count_id","\n"))
 
+
 def write_timestamp_to_file(name): 
     # creating the csv writer 
     # storing current date and time
@@ -958,3 +959,16 @@ if st.button("Compute"):
                     write_timestamp_to_file(name)    
                     name = add_front_name(name,i)
                     store()
+
+
+end_time = datetime.now()
+
+print("-------------------------------------------------------------------")
+print("\nStart Time :", start_time.strftime("%c"))
+print("\nEnd Time :", end_time.strftime("%c")) 
+print('\nDuration: {}'.format(end_time - start_time))
+duration=end_time - start_time
+name="Complete Duration"
+duration_timestamp_to_file(name, duration)
+
+print("-------------------------------------------------------------------")
