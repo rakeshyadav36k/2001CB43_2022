@@ -1,5 +1,6 @@
-# imported some libraries
 import streamlit as st
+
+# imported some libraries
 import openpyxl
 from openpyxl import load_workbook
 from openpyxl.utils.dataframe import dataframe_to_rows
@@ -19,8 +20,15 @@ st.set_page_config(page_title="Project 2",page_icon=":tada:",layout="wide")
 with st.sidebar:
     select = option_menu("Main Menu",["Home","Browse File","Add path"],icons=['house','files','folder'],menu_icon="laptop",default_index=0)
 
+if select =="Home":
+    st.title("CS384 - PROJECT 2")
+    st.subheader('''Built by : 
+    Navneet Kumar Chouhan (2001CB37) 
+    Rakesh Kumar Yadav (2001CB43) ''')
 
+        
 if select=="Add path":
+    st.subheader("Add Path")
     folderpath = st.text_input('Enter folder path:')
     mod_input = st.text_input('Enter the Mod value')
     if st.button('Compute'):
@@ -599,7 +607,7 @@ if select=="Add path":
                             elif(l7[i+1]==-4):
                                 r8c8+=1
 
-                        sheet.cell(row=10+p+x*13,column=35).value = str(y)+"-"+str(y+new_mod-1)
+                        sheet.cell(row=14+x*13,column=35).value = str(y)+"-"+str(y+new_mod-1)
                     y+=mod
                     if((len(l7)-y)<mod):
                         new_mod = len(l7) - y
@@ -617,21 +625,21 @@ if select=="Add path":
                     r7c1 = r7c2 = r7c3 = r7c4 = r7c5 = r7c6 = r7c7 = r7c8 = 0
                     r8c1 = r8c2 = r8c3 = r8c4 = r8c5 = r8c6 = r8c7 = r8c8 = 0
 
-                    sheet.cell(row=9+p+x*13,column=35).value = "Mod Transition Count"
-                    sheet.cell(row=10+p+x*13,column=36).value = "To" 
-                    sheet.cell(row=12+p+x*13,column=34).value = "From"
-                    sheet.cell(row=11+p+x*13,column=35).value = "Octant #"
-                    sheet.cell(row=11+p+x*13,column=35).border = border
+                    sheet.cell(row=13+x*13,column=35).value = "Mod Transition Count"
+                    sheet.cell(row=14+x*13,column=36).value = "To" 
+                    sheet.cell(row=16+x*13,column=34).value = "From"
+                    sheet.cell(row=15+x*13,column=35).value = "Octant #"
+                    sheet.cell(row=15+x*13,column=35).border = border
 
                     for j in range(8):
-                        sheet.cell(row=12+p+x*13+j,column=35).value = octant[j]
-                        sheet.cell(row=11+p+x*13,column=36+j).value = octant[j]
-                        sheet.cell(row=12+p+x*13+j,column=35).border = border
-                        sheet.cell(row=11+p+x*13,column=36+j).border = border
+                        sheet.cell(row=16+x*13+j,column=35).value = octant[j]
+                        sheet.cell(row=15+x*13,column=36+j).value = octant[j]
+                        sheet.cell(row=16+x*13+j,column=35).border = border
+                        sheet.cell(row=15+x*13,column=36+j).border = border
 
                         for k in range(8):     # here we have printed the mod transition values using loops
-                            sheet.cell(row=12+p+x*13+j,column=36+k).value = new_list[j][k]
-                            sheet.cell(row=12+p+x*13+j, column=36+k).border = border
+                            sheet.cell(row=16+x*13+j,column=36+k).value = new_list[j][k]
+                            sheet.cell(row=16+x*13+j, column=36+k).border = border
 
 
                 ##**************************************************************************************************************##
@@ -1165,30 +1173,36 @@ if select=="Add path":
 
                 os.chdir(cwd)                             # we save the output file and changing the directory to take a new input file
                 os.chdir(path_out)
-                wb.save('{}_vel_octant_analysis_mod_{}.xlsx'.format(file_name,str(mod)))
-                os.chdir(cwd)
+                time1=datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+                wb.save(str(file_name)+ '_mod' + '(' + str(mod)+ ')_' + str(time1) + '.xlsx')
+
+                # os.chdir(cwd)
                 os.chdir(folderpath)
+
+        os.chdir(cwd)
+        st.info("Completed !!")
+
 
 ######################################################
 ###                                                ###
-###         second part of code                    ###
+###         Other part of code                     ###
 ###                                                ###
 ###                                                ###
 ######################################################
 
 
 if select=="Browse File":
+    st.header("Browse File")
     files = st.file_uploader("Upload a excel file",accept_multiple_files=True)    
     mod_input = st.text_input('Enter the Mod value')
-    if st.button('Compute'):
-        
+
+    if st.button('Compute'):        
         df = pd.DataFrame
         for file in files:
             wb = load_workbook(file)
             sheet = wb.active
 
-            
-        
+
             df = pd.read_excel(file)     # df is a data frame in which we put the data of excel file using pandas
 
 
@@ -1750,7 +1764,7 @@ if select=="Browse File":
                         elif(l7[i+1]==-4):
                             r8c8+=1
 
-                    sheet.cell(row=10+p+x*13,column=35).value = str(y)+"-"+str(y+new_mod-1)
+                    sheet.cell(row=14+x*13,column=35).value = str(y)+"-"+str(y+new_mod-1)
                 y+=mod
                 if((len(l7)-y)<mod):
                     new_mod = len(l7) - y
@@ -1768,21 +1782,21 @@ if select=="Browse File":
                 r7c1 = r7c2 = r7c3 = r7c4 = r7c5 = r7c6 = r7c7 = r7c8 = 0
                 r8c1 = r8c2 = r8c3 = r8c4 = r8c5 = r8c6 = r8c7 = r8c8 = 0
 
-                sheet.cell(row=9+p+x*13,column=35).value = "Mod Transition Count"
-                sheet.cell(row=10+p+x*13,column=36).value = "To" 
-                sheet.cell(row=12+p+x*13,column=34).value = "From"
-                sheet.cell(row=11+p+x*13,column=35).value = "Octant #"
-                sheet.cell(row=11+p+x*13,column=35).border = border
+                sheet.cell(row=13+x*13,column=35).value = "Mod Transition Count"
+                sheet.cell(row=14+x*13,column=36).value = "To" 
+                sheet.cell(row=16+x*13,column=34).value = "From"
+                sheet.cell(row=15+x*13,column=35).value = "Octant #"
+                sheet.cell(row=15+x*13,column=35).border = border
 
                 for j in range(8):
-                    sheet.cell(row=12+p+x*13+j,column=35).value = octant[j]
-                    sheet.cell(row=11+p+x*13,column=36+j).value = octant[j]
-                    sheet.cell(row=12+p+x*13+j,column=35).border = border
-                    sheet.cell(row=11+p+x*13,column=36+j).border = border
+                    sheet.cell(row=16+x*13+j,column=35).value = octant[j]
+                    sheet.cell(row=15+x*13,column=36+j).value = octant[j]
+                    sheet.cell(row=16+x*13+j,column=35).border = border
+                    sheet.cell(row=15+x*13,column=36+j).border = border
 
                     for k in range(8):     # here we have printed the mod transition values using loops
-                        sheet.cell(row=12+p+x*13+j,column=36+k).value = new_list[j][k]
-                        sheet.cell(row=12+p+x*13+j, column=36+k).border = border
+                        sheet.cell(row=16+x*13+j,column=36+k).value = new_list[j][k]
+                        sheet.cell(row=16+x*13+j, column=36+k).border = border
                        
 
 
@@ -2315,10 +2329,12 @@ if select=="Browse File":
             for column in ["N"]:
                 sheet.column_dimensions[column].width = 22
 
-            wb.save('output/'+str(file.name[:-5])+'.xlsx')
+            time2=datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+            wb.save('output/'+str(file.name[:-5]) + '_mod' + '(' + str(mod)+ ')_' + str(time2) + '.xlsx')
 
 
-
+        st.info("Completed !!")
+  
 end_time = datetime.now()
 
 print("Duraion of Program Execution: ",end_time-start_time)
